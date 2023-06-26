@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/staticFiles/main.css" />
+</head>
+<body>
+    <h1>Web App for synthetic data testing</h1>
+    <br>
+    <p>Upload an image of your choice</p>
+<br>
+<br>
+
+    <form method="POST" enctype="multipart/form-data" action="/">
+        <input type="file" id="uploaded-file" name="uploaded-file" accept=".jpg">
+        <input type="submit" value="Submit">
+    </form>
+
+    <!--<p>Or</p>
+    <p>Capture an image using your camera:</p>
+    <div id="my_camera"></div>
+    <button id="startButton" onclick="ShowCam()">Start Camera</button>
+    <br>
+    <button id="captureButton" onclick="snap()" disabled>Capture</button>
+    <br>
+    <div id="results"></div>
+    <br>
+    <form id="myForm" onsubmit="upload(); return false;">
+        <input type="hidden" name="userID" value="user123">
+        <input type="submit" value="Submit" />
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script>
+        function ShowCam() {
+            Webcam.set({
+                width: 320,
+                height: 240,
+                image_format: 'jpeg',
+                jpeg_quality: 100
+            });
+            Webcam.attach('#my_camera');
+            document.getElementById('captureButton').disabled = false;
+        }
+
+        function snap() {
+            Webcam.snap(function(data_uri) {
+                document.getElementById('results').innerHTML = '<img id="image" src="' + data_uri + '"/>';
+            });
+        }
+
+        function upload() {
+            var image = document.getElementById('image').src;
+            var form = document.getElementById('myForm');
+            var formData = new FormData(form);
+            var uploadedFile = document.getElementById('uploaded-file').files[0];
+            formData.append("uploaded-file", uploadedFile);
+            formData.append("file", image);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("POST", "/");
+            xmlhttp.send(formData);
+        }
+    </script> -->
+
+    <p style="color:blue;"></p>
+
+    <form action="/show_data" target="_blank">
+        <input type="submit" value="Show Image" />
+    </form>
+</body>
+</html>

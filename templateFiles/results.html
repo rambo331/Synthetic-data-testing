@@ -1,0 +1,20 @@
+<!-- results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="/staticFiles/main.css">
+</head>
+<body>
+    <h1>Results</h1>
+
+    <div class="predictions">
+        {% for prediction in predictions %}
+            <p>{{ prediction }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
