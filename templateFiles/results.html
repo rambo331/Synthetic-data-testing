@@ -12,9 +12,11 @@
     <h1>Results</h1>
 
     <div class="predictions">
-        {% for prediction in predictions %}
-            <p>{{ prediction }}</p>
-        {% endfor %}
+        <p>
+            {% for prediction in predictions %}
+                {{ prediction }}{% if not loop.last %} {% endif %}
+            {% endfor %}
+        </p>
     </div>
 </body>
 </html>
