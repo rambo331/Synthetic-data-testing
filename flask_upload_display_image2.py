@@ -8,6 +8,7 @@ from werkzeug.utils import secure_filename
 # Define the path to the Keras model
 MODEL_PATH = 'model_mixed_data.keras'
 
+
 # Define the upload folder path
 UPLOAD_FOLDER = os.path.join('staticFiles', 'uploads')
 
