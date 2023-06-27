@@ -53,9 +53,14 @@ def uploadFile():
 
     # Make predictions using the loaded model
     predictions = model.predict(np.expand_dims(img, axis=0))
-    predictions = sum(predictions)
     # Process the predictions as needed
-    print(np.asarray(predictions))
+    i = list(predictions.reshape(6))
+    i = i.index(max(i))
+    if i==0:
+        predictions = 'PlayStation\(PS\)'
+    else:
+        predictions = 'Xbox'
+    print(predictions)    
 
     # Render the results on the webpage
     return render_template('results.html', predictions=predictions)
@@ -64,11 +69,10 @@ def preprocess_image(img_path):
     # Preprocess the image using OpenCV or any other image processing library
     img = cv2.imread(img_path)
     # Adjust the preprocessing steps according to your model's requirements
-  
     IMAGE_SIZE = (150,150)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = cv2.resize(img, IMAGE_SIZE)
-    return np.asarray(img)
+    return(img)
 
 if __name__ == '__main__':
     app.run(debug=True)
